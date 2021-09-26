@@ -1,0 +1,13 @@
+<select (change)="onCurrencyChanged($event.target)">
+  <option *ngFor="let item of currencies" [selected]="currency== item"> {{item}} </option>
+</select>
+<div style="display: block;">
+  <canvas baseChart width="500" height="200"
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    [plugins]="lineChartPlugins">
+  </canvas>
+</div>
