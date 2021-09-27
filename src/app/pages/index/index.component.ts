@@ -12,7 +12,6 @@ import { Color, Label } from 'ng2-charts';
 export class IndexComponent {
   
   public lineChartData: ChartDataSets[] = [ { data: [], label: ""}];
-  // line :any;
   public lineChartLabels: Label[] =[];
     
   public lineChartOptions = {
@@ -53,18 +52,10 @@ export class IndexComponent {
       const reslabel = resArrayStart[0];
       const resArray = resArrayStart[1].map((el:any)=>{ return el; })
       const values = resArray.map((el:any)=>{ return el.value; });
-      const labels =  resArray.map((el:any)=>{ 
-        const date = new Date(el.label);
-        return date.toLocaleDateString(); 
-      });
-       let d = {
-               data: values,
-               label: ''+reslabel
-             } as ChartDataSets;
-        
-       this.lineChartData[0].data = values;
-       this.lineChartData[0].label =''+reslabel;
-       this.lineChartLabels = labels;
+      const labels =  resArray.map((el:any)=>{ return (el.label).split(' ')[0]; });
+      this.lineChartData[0].data = values;
+      this.lineChartData[0].label =''+reslabel;
+      this.lineChartLabels = labels;
     });
   }
 }
