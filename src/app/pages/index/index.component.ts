@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartDataSets } from 'chart.js';
 import {ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
+import { URLpath } from 'src/main';
 
 @Component({
   selector: 'index-page',
@@ -10,43 +11,43 @@ import { Color, Label } from 'ng2-charts';
 })
 
 export class IndexComponent {
-  
+
   public lineChartData: ChartDataSets[] = [ { data: [], label: ""}];
   public lineChartLabels: Label[] =[];
-    
+
   public lineChartOptions = {
     responsive: true,
   };
-   
+
   public currency: string = "RUB";
   public currencies: Array<string> = [];
   public lineChartLegend = true;
   public lineChartType = 'line';
   public lineChartPlugins = [];
-  
+
   public respons: any;
 
-  constructor(private http:HttpClient ) 
-  { 
-    
+  constructor(private http:HttpClient )
+  {
+
   }
 
   onCurrencyChanged(event:any) {
     // debugger;
     if(this.currency !== event.value)
-    { 
+    {
       this.currency = event.value;
       this.onInit();
     }
   }
-   
+
   ngOnInit() {
     this.currencies = ["USD", "EUR", "RUB"];
     this.onInit();
   }
 
   onInit() {
-    this.http.get("https://localhost:44318/api/Valuta/"+ this.currency)
+    this.http.get(URLpath + "/api/"+ this.currency)
     .subscribe((result) => {
       const resArrayStart = Object.values(result);
       const reslabel = resArrayStart[0];

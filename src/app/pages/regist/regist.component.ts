@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { URLpath } from 'src/main';
 
 export interface User{
   name:string;
@@ -32,7 +33,7 @@ export class RegistComponent{
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     }
     const body=JSON.stringify(this.user);
-    this.http.post("https://localhost:44318/api/regist",body, httpOptions)
+    this.http.post(URLpath +"/api/regist",body, httpOptions)
      .subscribe(
       (data: any) => {
         this.received = {
