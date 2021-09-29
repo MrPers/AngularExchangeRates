@@ -6,11 +6,11 @@ import { Color, Label } from 'ng2-charts';
 import { URLpath } from 'src/main';
 
 @Component({
-  selector: 'index-page',
-  templateUrl: './index.component.html',
+  selector: 'chart-page',
+  templateUrl: './chart.component.html',
 })
 
-export class IndexComponent {
+export class ChartComponent {
 
   public lineChartData: ChartDataSets[] = [ { data: [], label: ""}, { data: [], label: ""}];
   public lineChartLabels: Label[] =[];
