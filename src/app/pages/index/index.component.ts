@@ -12,7 +12,7 @@ import { URLpath } from 'src/main';
 
 export class IndexComponent {
 
-  public lineChartData: ChartDataSets[] = [ { data: [], label: ""}];
+  public lineChartData: ChartDataSets[] = [ { data: [], label: ""}, { data: [], label: ""}];
   public lineChartLabels: Label[] =[];
 
   public lineChartOptions = {
@@ -34,6 +34,7 @@ export class IndexComponent {
 
   onCurrencyChanged(event:any) {
     // debugger;
+    // console.log(result);
     if(this.currency !== event.value)
     {
       this.currency = event.value;
@@ -52,10 +53,13 @@ export class IndexComponent {
       const resArrayStart = Object.values(result);
       const reslabel = resArrayStart[0];
       const resArray = resArrayStart[1].map((el:any)=>{ return el; })
-      const values = resArray.map((el:any)=>{ return el.value; });
-      const labels =  resArray.map((el:any)=>{ return (el.label).split(' ')[0]; });
-      this.lineChartData[0].data = values;
-      this.lineChartData[0].label =''+reslabel;
+      const sale = resArray.map((el:any)=>{ return el.sale; });
+      const buy = resArray.map((el:any)=>{ return el.buy; });
+      const labels =  resArray.map((el:any)=>{ return (el.data).split('T')[0]; });
+      this.lineChartData[0].data = sale;
+      this.lineChartData[0].label = reslabel + ' sale';
+      this.lineChartData[1].data = buy;
+      this.lineChartData[1].label = reslabel + ' buy';
       this.lineChartLabels = labels;
     });
   }
