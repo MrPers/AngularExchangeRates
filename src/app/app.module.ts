@@ -18,6 +18,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { RegistComponent } from './pages/regist/regist.component';
 import { ChartComponent } from './pages/chart/chart.component';
+import { CurrencyService } from './currency.service';
+import { ConstantsService } from './constants.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,10 @@ import { ChartComponent } from './pages/chart/chart.component';
     MatSortModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    CurrencyService,
+    ConstantsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
