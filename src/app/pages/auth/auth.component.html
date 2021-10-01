@@ -1,36 +1,26 @@
 <div>
-    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
-        <div class="form-group">
-            <label>Name</label>
-            <input class="form-control" name="name" formControlName="userName" [(ngModel)]="user.name" />
-            <div class="alert alert-danger"
-                *ngIf="formName()">
-                Name not specified
-            </div>
+  <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+      <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" name="name" formControlName="userName" [(ngModel)]="user.name" />
+          <div class="alert alert-danger"
+              *ngIf="formName()">
+              Name not specified
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input class="form-control" password="password" formControlName="userPassword" [(ngModel)]="user.password" />
+        <div class="alert alert-danger"
+            *ngIf="formPassword()">
+            Password not specified
         </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input class="form-control" name="email" formControlName="userEmail" [(ngModel)]="user.email" />
-              
-            <div class="alert alert-danger"
-                *ngIf="formEmail()">
-                Incorrect email
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Phone</label>
-            <input class="form-control" name="phone" formControlName="userPhone" [(ngModel)]="user.phone" />
-            <div class="alert alert-danger"
-                *ngIf="formPhone()">
-                Invalid phone number
-            </div>
-        </div>
-
-        <div class="form-group">
-            <button class="btn btn-default" [disabled]="myForm.invalid" (click)="onClick()" >
-                Send
-            </button>
-        </div>
-    </form>
+      </div>
+      <div class="form-group">
+          <button class="btn btn-default" [disabled]="myForm.invalid" (click)="onClick()" >
+              Send
+          </button>
+      </div>
+  </form>
 </div>
 

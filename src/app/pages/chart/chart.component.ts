@@ -43,12 +43,15 @@ export class ChartComponent {
   onDisplay() {
     this.currencyService.dispatchRateMoney(this.currency)
     .subscribe((result) => {
+      debugger;
       const resArray = result[1].map((el:any)=>{ return el; });
       this.lineChartData[0].data = resArray.map((el:any)=>{ return el.sale; });
       this.lineChartData[0].label = result[0] + ' sale';
       this.lineChartData[1].data = resArray.map((el:any)=>{ return el.buy; });
       this.lineChartData[1].label = result[0] + ' buy';
       this.lineChartLabels = resArray.map((el:any)=>{ return (el.data).split('T')[0]; });
-    });
+    },
+    error => console.log(error)
+    );
   }
 }
