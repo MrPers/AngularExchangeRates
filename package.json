@@ -22,6 +22,8 @@
     "@angular/router": "~12.2.0",
     "bootstrap": "^4.6.0",
     "chart.js": "2.9.4",
+    "m": "^1.6.0",
+    "main": "^1000.0.1",
     "ng2-charts": "3.0.0-beta.8",
     "ngx-bootstrap": "^7.1.0",
     "rxjs": "~6.6.0",

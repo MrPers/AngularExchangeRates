@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { URLpath } from 'src/app/constants.service';
+import { URLpath } from 'src/app/services/constants.service';
 
 export interface User{
   name:string;

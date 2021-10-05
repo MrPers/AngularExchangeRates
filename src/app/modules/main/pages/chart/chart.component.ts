@@ -4,8 +4,8 @@ import { ChartDataSets } from 'chart.js';
 import {ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { Observable } from 'rxjs';
-import {CurrencyService } from 'src/app/currency.service';
-import { currency, currencies } from '../../constants.service';
+import {CurrencyService } from 'src/app/services/currency.service';
+import { currency, currencies } from '../../services/constants.service';
 
 @Component({
   selector: 'chart-page',

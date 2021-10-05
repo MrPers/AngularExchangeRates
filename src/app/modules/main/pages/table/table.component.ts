@@ -3,8 +3,8 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {PageChangedEvent } from 'ngx-bootstrap/pagination';
-import { CurrencyService } from 'src/app/currency.service';
-import { currency, currencies } from '../../constants.service';
+import { CurrencyService } from 'src/app/services/currency.service';
+import { currency, currencies } from '../../services/constants.service';
 
 export class  PeriodicElement {
   public position!: number;

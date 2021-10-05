@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from 'src/app/constants.service';
-import { CurrencyService } from 'src/app/currency.service';
+import { User } from 'src/app/services/constants.service';
+import { CurrencyService } from 'src/app/services/currency.service';
 
 @Component({
   selector: 'aregist-page',
