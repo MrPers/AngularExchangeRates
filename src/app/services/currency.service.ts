@@ -14,7 +14,11 @@ export class CurrencyService {
   }
 
   dispatchRateMoney(currency: string) : Observable<any> {
-    return this.http.get(URLpath + 'currency/' + currency);
+    return this.http.get(URLpath + 'currencyhistory/' + currency);
+  };
+
+  gettRateMoney() : Observable<any> {
+    return this.http.get(URLpath + 'currency/');
   };
 
   registerUser(body: string) : Observable<any> {

@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AddDataComponent } from './widgets/add-data/add-data.component';
+import { AddDataComponent } from './pages/add-data/add-data.component';
 import { AdminComponent } from './admin.component';
-import { CarrenciesComponent } from './widgets/carrencies/carrencies.component';
+import { CarrenciesComponent } from './pages/carrencies/carrencies.component';
 
 const routes: Routes = [
   {

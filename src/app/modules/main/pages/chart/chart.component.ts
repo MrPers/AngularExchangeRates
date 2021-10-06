@@ -5,7 +5,7 @@ import {ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { Observable } from 'rxjs';
 import {CurrencyService } from 'src/app/services/currency.service';
-import { currency, currencies } from '../../services/constants.service';
+import { currency} from '../../../../services/constants.service';
 
 @Component({
   selector: 'chart-page',
@@ -20,7 +20,7 @@ export class ChartComponent {
   public lineChartLegend = true;
   public lineChartType = 'line';
   public lineChartPlugins = [];
-  public currencies = currencies;
+  public currencies: Array<string> = [];
 
   public lineChartOptions = {};
 
@@ -37,7 +37,18 @@ export class ChartComponent {
   }
 
   ngOnInit() {
+    this.onDisplayMoney();
     this.onDisplay();
+  }
+
+  onDisplayMoney() {
+    this.currencyService.gettRateMoney()
+    .subscribe((result) => {
+      const resArray = result.map((el:any)=>{ return el; })
+      for (let item of resArray) {
+        this.currencies[(item.id - 1)] = item.name;
+      };
+    });
   }
 
   onDisplay() {

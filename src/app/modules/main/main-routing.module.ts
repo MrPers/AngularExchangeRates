@@ -1,18 +1,18 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AddDataComponent } from './widgets/add-data/add-data.component';
-import { AdminComponent } from './admin.component';
-import { CarrenciesComponent } from './widgets/carrencies/carrencies.component';
+import { MainComponent } from './main.component';
+import { ChartComponent } from './pages/chart/chart.component';
+import { TableComponent } from './pages/table/table.component';
 
 const routes: Routes = [
   {
-    path:'', component: AdminComponent,
+    path:'', component: MainComponent,
     children:[
       {
-        path: 'addData', component: AddDataComponent,
+        path: 'chart', component: ChartComponent,
       },
       {
-        path: 'currencies', component: CarrenciesComponent,
+        path: 'table', component: TableComponent,
       }
     ],
   }

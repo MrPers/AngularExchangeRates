@@ -4,19 +4,13 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @Component({
   selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css'],
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css'],
 })
-export class AdminComponent {
+export class MainComponent {
 
   constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit(): void {
-    }
-  coins(){
-      this.router.navigate(['coins'], {relativeTo:this.route});
-    }
-  notes(){
-      this.router.navigate(['notes'], {relativeTo:this.route});
     }
 
 }

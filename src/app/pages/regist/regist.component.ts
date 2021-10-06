@@ -34,7 +34,7 @@ export class RegistComponent{
     const body = JSON.stringify(this.user);
     this.currencyService.registerUser(body)
      .subscribe((data) => {
-        alert("Имя:" + (data?.name ?? 'Имя по умолчанию') + "\n" + "Id:" +(data?.id ?? 'Id нету') );
+        // alert("Имя:" + (data?.name ?? 'Имя по умолчанию') + "\n" + "Id:" +(data?.id ?? 'Id нету') );
       },
       error => console.log(error)
      );

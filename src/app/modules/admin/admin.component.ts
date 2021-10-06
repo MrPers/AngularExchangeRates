@@ -12,11 +12,5 @@ export class AdminComponent {
   constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit(): void {
     }
-  coins(){
-      this.router.navigate(['coins'], {relativeTo:this.route});
-    }
-  notes(){
-      this.router.navigate(['notes'], {relativeTo:this.route});
-    }
 
 }
