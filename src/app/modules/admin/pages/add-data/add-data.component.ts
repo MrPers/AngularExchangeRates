@@ -31,10 +31,7 @@ export class AddDataComponent {
       testData.append('file', input, input.name);
       debugger;
 
-      this.http.post('https://localhost:44318/api/addcurrency', testData, {
-        reportProgress: true, // Без observe: 'events' не работает
-        observe: 'events', // без reportProgress: true только HttpEventType.Sent и HttpEventType.Response
-      })
+      this.http.post('https://localhost:44318/api/addcurrency', testData)
       .subscribe(response => {
         console.log(response);
       });
@@ -44,14 +41,5 @@ export class AddDataComponent {
   isValidCSVFile(file: any) {
     return file.name.endsWith(".csv");
   }
-
-  // getHeaderArray(csvRecordsArr: any) {
-  //   let headers = (<string>csvRecordsArr[0]).split(',');
-  //   let headerArray = [];
-  //   for (let j = 0; j < headers.length; j++) {
-  //     headerArray.push(headers[j]);
-  //   }
-  //   return headerArray;
-  // }
 
 }

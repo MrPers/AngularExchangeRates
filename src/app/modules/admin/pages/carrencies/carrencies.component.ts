@@ -8,12 +8,6 @@ export interface PeriodicElement {
   id: number;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Li'},
-]
-
 @Component({
   selector: 'app-carrencies',
   templateUrl: './carrencies.component.html',

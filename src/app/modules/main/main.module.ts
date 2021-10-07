@@ -7,11 +7,11 @@ import { CommonModule } from '@angular/common';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MainComponent } from './main.component';
-import { CurrencyService } from 'src/app/services/currency.service';
-import { ConstantsService } from 'src/app/services/constants.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { AdminRoutingModule } from './main-routing.module';
+import { CurrencyService } from '../../services/currency.service';
+import { ConstantsService } from '../../services/constants.service';
 
 @NgModule({
   declarations: [
