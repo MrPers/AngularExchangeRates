@@ -2,6 +2,9 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { CurrencyService } from '../../../../services/currency.service';
+import {MatDialog} from '@angular/material/dialog';
+import { AddCurrencyComponent } from '../add-currency/add-currency.component';
+import { AddDataComponent } from '../add-data/add-data.component';
 
 export interface PeriodicElement {
   name: string;
@@ -21,7 +24,7 @@ export class CarrenciesComponent implements OnInit {
 
   @ViewChild(MatSort) sort: any;
 
-  constructor(private currencyService:CurrencyService ){}
+  constructor(public dialog: MatDialog, private currencyService:CurrencyService ){}
 
   ngOnInit(): void {
     this.onDisplay();
@@ -40,6 +43,26 @@ export class CarrenciesComponent implements OnInit {
       };
       this.dataSource = new MatTableDataSource(this.resultData);
       this.dataSource.sort = this.sort;
+    });
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AddCurrencyComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log({result});
+      debugger;
+      this.onDisplay();
+    });
+  }
+
+  openHistoryDialog() {
+    const dialogRef = this.dialog.open(AddDataComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log({result});
+      debugger;
+      this.onDisplay();
     });
   }
 }

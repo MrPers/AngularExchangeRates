@@ -18,12 +18,9 @@ export class CurrencyService {
     return this.http.get(URLpath + 'currencyhistory/' + currency);
   };
 
-  // sendNewCurrencies(currency: CSVRecord) : Observable<any> {
-  sendNewCurrencies(currency: any) : Observable<any> {
-
-    debugger;
+  addCurrencies(currency: any){
     return this.http.post(URLpath + 'addcurrency', currency, {
-      headers: new HttpHeaders({'Content-Type': 'text/csv'})
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
     });
   };
 
@@ -31,7 +28,7 @@ export class CurrencyService {
     return this.http.get(URLpath + 'currency/');
   };
 
-  registerUser(body: string) : Observable<any> {
+  registerUser(body: any) : Observable<any> {
     return this.http.post(URLpath + "regist", body, {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     });

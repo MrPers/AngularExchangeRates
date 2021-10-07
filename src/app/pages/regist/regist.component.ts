@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from 'src/app/services/constants.service';
-import { CurrencyService } from 'src/app/services/currency.service';
+import { User } from '../../services/constants.service';
+import { CurrencyService } from '../../services/currency.service';
 
 @Component({
   selector: 'aregist-page',
@@ -31,7 +31,7 @@ export class RegistComponent{
 
   onClick() {
 
-    const body = JSON.stringify(this.user);
+    let body = JSON.stringify(this.user);
     this.currencyService.registerUser(body)
      .subscribe((data) => {
         // alert("Имя:" + (data?.name ?? 'Имя по умолчанию') + "\n" + "Id:" +(data?.id ?? 'Id нету') );

@@ -11,7 +11,8 @@ import { AdminComponent } from './admin.component';
 import { AddCurrencyComponent } from './pages/add-currency/add-currency.component';
 import { AddDataComponent } from './pages/add-data/add-data.component';
 import { CarrenciesComponent } from './pages/carrencies/carrencies.component';
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 // import { HttpClientModule } from '@angular/common/http';
 // import { MatNativeDateModule } from '@angular/material/core';
 
@@ -27,13 +28,8 @@ import { CarrenciesComponent } from './pages/carrencies/carrencies.component';
     AdminRoutingModule,
     MatSortModule,
     MatTableModule,
-    // MatDialogModule,
-    // BrowserModule,
-    // BrowserAnimationsModule,
-    // FormsModule,
-    // HttpClientModule,
-    // MatNativeDateModule,
-    // ReactiveFormsModule,
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [
   ],

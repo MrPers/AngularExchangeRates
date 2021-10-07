@@ -14,6 +14,7 @@ import { ConstantsService } from './services/constants.service';
 import { AdminModule } from './modules/admin/admin.module';
 import { MainModule } from './modules/main/main.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDialogRef } from '@angular/material/dialog';
 // import { MatSortModule } from '@angular/material/sort';
 // import { MatTableModule } from '@angular/material/table';
 
@@ -38,7 +39,8 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   providers: [
     CurrencyService,
-    ConstantsService
+    ConstantsService,
+    // provide: MatDialogRef,
   ],
   bootstrap: [AppComponent]
 })
