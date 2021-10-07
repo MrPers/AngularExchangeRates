@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { CSVRecord } from '../modules/admin/pages/add-data/add-data.component';
 import { URLpath } from './constants.service';
 
 @Injectable({
@@ -17,9 +18,12 @@ export class CurrencyService {
     return this.http.get(URLpath + 'currencyhistory/' + currency);
   };
 
-  sendNewCurrencies(currency: string) : Observable<any> {
-    return this.http.post(URLpath + 'addCurrency', currency, {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
+  // sendNewCurrencies(currency: CSVRecord) : Observable<any> {
+  sendNewCurrencies(currency: any) : Observable<any> {
+
+    debugger;
+    return this.http.post(URLpath + 'addcurrency', currency, {
+      headers: new HttpHeaders({'Content-Type': 'text/csv'})
     });
   };
 

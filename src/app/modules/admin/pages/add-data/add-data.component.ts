@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 export class CSVRecord {
   public name: any;
@@ -12,6 +13,9 @@ export class CSVRecord {
 
 export class AddDataComponent {
 
+  constructor(private http:HttpClient ) {
+
+  }
   public records: any[] = [];
   @ViewChild('csvReader') csvReader: any;
 
@@ -19,30 +23,21 @@ export class AddDataComponent {
     let files = $event.srcElement.files;
 
     if (this.isValidCSVFile(files[0])) {
+      let input = $event.target.files[0];
+      // let reader = new FileReader();
+      // reader.readAsText(input);
+
+      let testData:FormData = new FormData();
+      testData.append('file', input, input.name);
       debugger;
-      let input = $event.target;
-      let reader = new FileReader();
-      
-      reader.readAsText(input.files[0]);
 
-      reader.onload = (event) => {
-        const file = event.target.result;
-        const allLines = file.split(/\r\n|\n/);
-        // Reading line by line
-        allLines.forEach((line) => {
-            console.log(line);
-        });
-    };
-
-      debugger;
-      reader.onload = () => {
-        let csvData = reader.result;
-        let csvRecordsArray = (<string>csvData).split(/\r\n|\n/);
-        // let headersRow = this.getHeaderArray(csvRecordsArray);
-        debugger;
-
-
-      };
+      this.http.post('https://localhost:44318/api/addcurrency', testData, {
+        reportProgress: true, // Без observe: 'events' не работает
+        observe: 'events', // без reportProgress: true только HttpEventType.Sent и HttpEventType.Response
+      })
+      .subscribe(response => {
+        console.log(response);
+      });
     }
   }
 
