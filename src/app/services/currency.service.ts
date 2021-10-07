@@ -17,12 +17,17 @@ export class CurrencyService {
     return this.http.get(URLpath + 'currencyhistory/' + currency);
   };
 
+  sendNewCurrencies(currency: string) : Observable<any> {
+    return this.http.post(URLpath + 'addCurrency', currency, {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    });
+  };
+
   gettRateMoney() : Observable<any> {
     return this.http.get(URLpath + 'currency/');
   };
 
   registerUser(body: string) : Observable<any> {
-    debugger;
     return this.http.post(URLpath + "regist", body, {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     });

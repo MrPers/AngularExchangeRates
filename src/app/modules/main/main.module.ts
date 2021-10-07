@@ -27,7 +27,7 @@ import { AdminRoutingModule } from './main-routing.module';
     PaginationModule.forRoot(),
     MatSortModule,
     MatTableModule,
-    ChartsModule
+    ChartsModule,
   ],
   providers: [
     CurrencyService,
