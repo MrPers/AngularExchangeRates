@@ -5,6 +5,7 @@ import { CurrencyService } from '../../../../services/currency.service';
 import {MatDialog} from '@angular/material/dialog';
 import { AddCurrencyComponent } from '../add-currency/add-currency.component';
 import { AddDataComponent } from '../add-data/add-data.component';
+import { ConstantsService } from '../../../../services/constants.service';
 
 export interface PeriodicElement {
   name: string;
@@ -18,13 +19,12 @@ export interface PeriodicElement {
 })
 
 export class CarrenciesComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name'];
+  displayedColumns: string[] = ['id', 'name', 'add'];
   dataSource: any;
   resultData! : PeriodicElement[];
-
   @ViewChild(MatSort) sort: any;
 
-  constructor(public dialog: MatDialog, private currencyService:CurrencyService ){}
+  constructor(public dialog: MatDialog, private currencyService:CurrencyService, private constantsService:ConstantsService ){}
 
   ngOnInit(): void {
     this.onDisplay();
@@ -51,18 +51,15 @@ export class CarrenciesComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log({result});
-      debugger;
       this.onDisplay();
     });
   }
 
-  openHistoryDialog() {
+  openHistoryDialog(name: string) {
+    this.constantsService.name = name;
     const dialogRef = this.dialog.open(AddDataComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       console.log({result});
-      debugger;
-      this.onDisplay();
     });
   }
 }

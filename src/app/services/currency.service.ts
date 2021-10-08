@@ -33,6 +33,17 @@ export class CurrencyService {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     });
   };
+
+  addCurrenciesHistory(input: any, name: string) : Observable<any> {
+    debugger;
+      let testData:FormData = new FormData();
+      testData.append('file', input, name + '/' + input.name);
+      return this.http.post('https://localhost:44318/api/addcurrencyhistory', testData, {
+        //  и без этого работает, надо разобраться
+        reportProgress: true, // Без observe: 'events' не работает
+        observe: 'events', // без reportProgress: true только HttpEventType.Sent и HttpEventType.Response
+      });
+  };
 }
 
 

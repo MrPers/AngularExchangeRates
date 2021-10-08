@@ -10,5 +10,6 @@ export interface User{
 }
 
 export class ConstantsService {
+  name: string = "";
   constructor() { }
 }

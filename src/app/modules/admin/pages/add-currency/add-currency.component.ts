@@ -14,7 +14,6 @@ export class AddCurrencyComponent {
   constructor(private currencyService:CurrencyService ) { }
 
   sendCurrency(){
-
     const currency = JSON.stringify({ name: this.currencyName} );
     this.currencyService.addCurrencies(currency)
     .subscribe((result) => {

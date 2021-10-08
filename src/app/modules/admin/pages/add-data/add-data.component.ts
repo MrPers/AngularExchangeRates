@@ -1,5 +1,7 @@
+import { ConstantsService} from './../../../../services/constants.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { CurrencyService } from '../../../../services/currency.service';
 export class CSVRecord {
   public name: any;
   public currency: any;
@@ -12,29 +14,26 @@ export class CSVRecord {
 })
 
 export class AddDataComponent {
-
-  constructor(private http:HttpClient ) {
-
-  }
+  event!: any;
   public records: any[] = [];
   @ViewChild('csvReader') csvReader: any;
 
-  uploadListener($event: any): void {
-    let files = $event.srcElement.files;
+    constructor(private currencyService:CurrencyService, private constantsService:ConstantsService) {
+  }
 
-    if (this.isValidCSVFile(files[0])) {
-      let input = $event.target.files[0];
-      // let reader = new FileReader();
-      // reader.readAsText(input);
+  uploadListener(event: any): void {
+    this.event = event;
+  }
 
-      let testData:FormData = new FormData();
-      testData.append('file', input, input.name);
-      debugger;
-
-      this.http.post('https://localhost:44318/api/addcurrency', testData)
-      .subscribe(response => {
-        console.log(response);
-      });
+  upload(){
+    if(this.event != undefined){
+      let files = this.event.srcElement.files;
+      if (this.isValidCSVFile(files[0])) {
+        this.currencyService.addCurrenciesHistory(this.event.target.files[0], this.constantsService.name)
+        .subscribe(response => {
+          console.log(response);
+        });
+      }
     }
   }
 
