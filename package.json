@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@syncfusion/ej2-angular-inputs": "^19.3.44",
+    "angular-file-uploader": "^7.1.0",
     "angular2-csv": "^0.2.9",
     "bootstrap": "^4.6.0",
     "chart.js": "2.9.4",

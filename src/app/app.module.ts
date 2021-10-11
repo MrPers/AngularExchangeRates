@@ -14,9 +14,8 @@ import { ConstantsService } from './services/constants.service';
 import { AdminModule } from './modules/admin/admin.module';
 import { MainModule } from './modules/main/main.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatDialogRef } from '@angular/material/dialog';
-// import { MatSortModule } from '@angular/material/sort';
-// import { MatTableModule } from '@angular/material/table';
+// import { UploaderModule  } from '@syncfusion/ej2-angular-inputs';
+// import { AngularFileUploaderModule } from "angular-file-uploader";
 
 @NgModule({
   declarations: [
@@ -34,8 +33,6 @@ import { MatDialogRef } from '@angular/material/dialog';
     ReactiveFormsModule,
     AdminModule,
     MainModule,
-    // MatSortModule,
-    // MatTableModule
   ],
   providers: [
     CurrencyService,

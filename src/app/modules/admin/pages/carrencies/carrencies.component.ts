@@ -4,7 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { CurrencyService } from '../../../../services/currency.service';
 import {MatDialog} from '@angular/material/dialog';
 import { AddCurrencyComponent } from '../add-currency/add-currency.component';
-import { AddDataComponent } from '../add-data/add-data.component';
+import { AddDataComponent } from "../add-data/AddDataComponent";
 import { ConstantsService } from '../../../../services/constants.service';
 
 export interface PeriodicElement {
