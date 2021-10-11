@@ -31,7 +31,7 @@ import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
     MatTableModule,
     MatDialogModule,
     FormsModule,
-    UploaderModule,
+    // UploaderModule,
   ],
   providers: [
   ],
