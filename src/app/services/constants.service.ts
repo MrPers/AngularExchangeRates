@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export const URLpath = "https://localhost:44318/api/";
+export const URLpath = "https://localhost:5001/api/";
 export const currency: string = "RUB";
 export interface User{
   name:string;

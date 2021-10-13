@@ -10,12 +10,6 @@ import { CurrencyService } from '../../../../services/currency.service';
 
 
 export class AddDataComponent {
-  // public path: Object = {
-  //   saveUrl: 'https://localhost:44318/api/addcurrencyhistory',
-  //   removeUrl: 'https://localhost:44318/api/addcurrencyhistory',
-  //   // set chunk size for enable the chunk upload
-  //   chunkSize: 102400
-  // };
   event!: any;
   public records: any[] = [];
   @ViewChild('csvReader') csvReader: any;

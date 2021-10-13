@@ -13,7 +13,6 @@ import { AddDataComponent } from "./pages/add-data/AddDataComponent";
 import { CarrenciesComponent } from './pages/carrencies/carrencies.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 // import { HttpClientModule } from '@angular/common/http';
 // import { MatNativeDateModule } from '@angular/material/core';
 
@@ -31,7 +30,6 @@ import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
     MatTableModule,
     MatDialogModule,
     FormsModule,
-    // UploaderModule,
   ],
   providers: [
   ],
