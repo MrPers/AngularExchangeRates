@@ -1,7 +1,14 @@
-<select (change)="onCurrencyChanged($event.target)">
-  <option *ngFor="let item of currencies" [selected]="currency== item"> {{item}} </option>
-</select>
-
+<div >
+  <select (change)="onCurrencyChanged($event.target)">
+    <option *ngFor="let item of currencies" [selected]="currency== item"> {{item}} </option>
+  </select>
+  <select (change)="onScaleChanged($event.target)">
+    <option *ngFor="let item of scales" [selected]="scale== item"> {{item}} </option>
+  </select>
+  <input type="date" [(ngModel)] ="dtStart" style="float: right;"/>
+  <button (click)="renew()" style="float: right;">Send</button>
+  <input type="date" [(ngModel)] ="dtFinal" style="float: right;"/>
+</div>
 <div>
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 

@@ -14,6 +14,8 @@ import { ConstantsService } from './services/constants.service';
 import { AdminModule } from './modules/admin/admin.module';
 import { MainModule } from './modules/main/main.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 // import { UploaderModule  } from '@syncfusion/ej2-angular-inputs';
 // import { AngularFileUploaderModule } from "angular-file-uploader";
 
@@ -26,6 +28,9 @@ import { BrowserModule } from '@angular/platform-browser';
     RegistComponent,
   ],
   imports: [
+
+    // BrowserAnimationsModule,
+    // BsDatepickerModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -33,6 +38,7 @@ import { BrowserModule } from '@angular/platform-browser';
     ReactiveFormsModule,
     AdminModule,
     MainModule,
+    BsDatepickerModule,
   ],
   providers: [
     CurrencyService,

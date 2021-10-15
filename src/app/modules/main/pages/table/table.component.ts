@@ -3,8 +3,8 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {PageChangedEvent } from 'ngx-bootstrap/pagination';
-import { CurrencyService } from 'src/app/services/currency.service';
-import { currency} from '../../../../services/constants.service';
+import { currency, scale, scales} from '../../../../services/constants.service';
+import { CurrencyService } from '../../../../services/currency.service';
 
 export class  PeriodicElement {
   public position!: number;
@@ -27,17 +27,19 @@ export class TableComponent{
   public currency = currency;
   public currencies: Array<string> = [];
   rotate = false;
+  public scales = scales;
+  public scale = scale;
+  public dtFinal: any;
+  public dtStart: any;
   maxSize = 5;
   currentPage = 1;
   smallnumPages! : number;
-
   @ViewChild(MatSort) sort: any;
 
   constructor(private currencyService:CurrencyService ){}
 
   ngOnInit() {
     this.onDisplayMoney();
-    this.onDisplay();
   }
 
   onDisplayMoney() {
@@ -65,8 +67,8 @@ export class TableComponent{
   }
 
   onDisplay() {
-    this.currencyService.dispatchRateMoney(this.currency)
-    .subscribe((result) => {
+    this.currencyService.dispatchRateMoney(this.currency, this.scale, this.dtStart, this.dtFinal)
+    .subscribe((result:any) => {
       this.smallnumPages = 1;
       this.resultData = [];
       const resArray = result[1].map((el:any)=>{ return el; })
@@ -87,6 +89,22 @@ export class TableComponent{
     if(this.currency !== event.value)
     {
       this.currency = event.value;
+      this.onDisplay();
+    }
+  }
+
+  onScaleChanged(event:any) {
+    if(this.scale !== event.value)
+    {
+      this.scale = event.value;
+      this.renew();
+    }
+  }
+
+  renew(){
+    if(this.dtFinal !== undefined
+      || this.dtStart !== undefined)
+    {
       this.onDisplay();
     }
   }

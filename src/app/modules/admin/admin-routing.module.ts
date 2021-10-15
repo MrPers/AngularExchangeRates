@@ -12,9 +12,10 @@ const routes: Routes = [
       {
         path: 'addData', component: AddDataComponent,
       },
-      {
-        path: 'currencies', component: CarrenciesComponent,
-      }
+      // {
+      //   path: 'currencies', component: CarrenciesComponent,
+      // }
+      // EXEC [SELECT_Currencies]
     ],
   }
 ];

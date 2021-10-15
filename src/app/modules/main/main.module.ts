@@ -1,3 +1,5 @@
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableComponent } from './pages/table/table.component';
 import { ChartComponent } from './pages/chart/chart.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -12,6 +14,9 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { AdminRoutingModule } from './main-routing.module';
 import { CurrencyService } from '../../services/currency.service';
 import { ConstantsService } from '../../services/constants.service';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [

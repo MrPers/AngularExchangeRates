@@ -10,12 +10,11 @@ import { URLpath } from './constants.service';
 
 export class CurrencyService {
 
-  constructor(private http:HttpClient ) {
+  constructor(private http:HttpClient ) {}
 
-  }
+  dispatchRateMoney(currency: string, scale:string, dtStart:string, dtFinal:string){
+    return this.http.get(URLpath + 'currencyhistory/' + currency + '/' + scale + '/' + (dtStart < dtFinal ? (dtStart + '/' + dtFinal) : (dtFinal + '/' + dtStart)));
 
-  dispatchRateMoney(currency: string) : Observable<any> {
-    return this.http.get(URLpath + 'currencyhistory/' + currency);
   };
 
   addCurrencies(currency: any){
