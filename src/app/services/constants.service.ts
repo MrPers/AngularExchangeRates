@@ -4,8 +4,8 @@ export const URLpath = "https://localhost:44318/api/";
 export const currency: string = "RUB";
 export const scale: string = "year";
 export const scales: Array<string> = [
-  "second",
-  "minute",
+  "sec",
+  "min",
   "hour",
   "day",
   "month",

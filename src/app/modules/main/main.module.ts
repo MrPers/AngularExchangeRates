@@ -17,12 +17,14 @@ import { ConstantsService } from '../../services/constants.service';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { BrowserModule } from '@angular/platform-browser';
+import { StatisticsChartComponent } from './pages/statistics-chart/statistics-chart.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     ChartComponent,
-    TableComponent
+    TableComponent,
+    StatisticsChartComponent,
   ],
   imports: [
     FormsModule,

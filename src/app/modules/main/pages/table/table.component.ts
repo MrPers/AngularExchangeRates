@@ -54,6 +54,7 @@ export class TableComponent{
 
   AfterViewInit() {
     this.allResultData = [];
+    // debugger;
     for (var i = (this.currentPage - 1)* 10; i < (this.currentPage)* 10; i++) {
       this.allResultData.push({
         position: this.resultData[i].position,
@@ -77,7 +78,7 @@ export class TableComponent{
           position: this.smallnumPages,
           buy: item.buy,
           sale: item.sale,
-          data: item.data.split('T')[0]});
+          data: ((item.data).split('T')[0]+ ' ' +(item.data).split('T')[1])});
         this.smallnumPages ++;
       };
       this.smallnumPages=this.smallnumPages-1;

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MainComponent } from './main.component';
 import { ChartComponent } from './pages/chart/chart.component';
 import { TableComponent } from './pages/table/table.component';
+import { StatisticsChartComponent } from './pages/statistics-chart/statistics-chart.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
       },
       {
         path: 'table', component: TableComponent,
+      },
+      {
+        path: 'statisticsChart', component: StatisticsChartComponent,
       }
     ],
   }

@@ -9,12 +9,12 @@ const routes: Routes = [
   {
     path:'', component: AdminComponent,
     children:[
-      {
-        path: 'addData', component: AddDataComponent,
-      },
       // {
-      //   path: 'currencies', component: CarrenciesComponent,
-      // }
+      //   path: 'addData', component: AddDataComponent,
+      // },
+      {
+        path: 'currencies', component: CarrenciesComponent,
+      }
       // EXEC [SELECT_Currencies]
     ],
   }

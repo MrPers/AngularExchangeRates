@@ -78,7 +78,7 @@ export class ChartComponent {
       this.lineChartData[0].label = result[0] + ' sale';
       this.lineChartData[1].data = resArray.map((el:any)=>{ return el.buy; });
       this.lineChartData[1].label = result[0] + ' buy';
-      this.lineChartLabels = resArray.map((el:any)=>{ return (el.data).split('T')[0]; });
+      this.lineChartLabels = resArray.map((el:any)=>{ return ((el.data).split('T')[0]+ ' ' + (el.data).split('T')[1]); });
     },
     error => console.log(error)
     );
